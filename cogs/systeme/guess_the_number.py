@@ -48,7 +48,7 @@ class NummerErraten(ezcord.Cog, group="Mini Games"):
         gesetzt = await dba.gesetzt_select(ctx.guild.id)
         if gesetzt == 1:
             await ctx.respond(
-                f"{Nope} × Das Guess the number Game ist schon aktiviert.",
+                f"× Das Guess the number Game ist schon aktiviert.",
                 ephemeral=True,
             )
             return
@@ -89,7 +89,7 @@ class NummerErraten(ezcord.Cog, group="Mini Games"):
         await channel.purge()
         await channel.send(embed=embed)
         await message.edit(
-            f"{Falcon_Yes} × das Sytem wurde erfolgreich in {channel.mention} aktiviert!",
+            f"× das Sytem wurde erfolgreich in {channel.mention} aktiviert!",
         )
 
     @channel.command(
@@ -104,7 +104,7 @@ class NummerErraten(ezcord.Cog, group="Mini Games"):
         channel = await dba.channel_select(ctx.guild.id)
         if gesetzt == 0:
             return await ctx.respond(
-                f"{Nope} × Das System wurde auf diesem Server noch nicht aktiviert!",
+                f"× Das System wurde auf diesem Server noch nicht aktiviert!",
                 ephemeral=True,
             )
         if channel is not None:
@@ -117,7 +117,7 @@ class NummerErraten(ezcord.Cog, group="Mini Games"):
                 await dba.versuche2_set(0, ctx.guild.id, user_id)
             await dba.channel_set(0, ctx.guild.id)
             await message.edit(content=
-                f"{Falcon_Yes} × das System wurde auf diesem Server deaktiviert!",
+                f"× das System wurde auf diesem Server deaktiviert!",
                 
             )
         else:
@@ -126,7 +126,7 @@ class NummerErraten(ezcord.Cog, group="Mini Games"):
             for user_id in users:
                 await dba.versuche2_set(0, ctx.guild.id, user_id)
             await ctx.respond(
-                f"{Falcon_Yes} × das System wurde auf diesem Server deaktiviert!",
+                f"× das System wurde auf diesem Server deaktiviert!",
                 ephemeral=True,
             )
 
@@ -163,7 +163,7 @@ class NummerErraten(ezcord.Cog, group="Mini Games"):
                             1, message.author.guild.id, message.author.id
                         )
                         embed = discord.Embed(
-                            title=f"{Flugzeug} Versuche verbraucht!",
+                            title=f"Versuche verbraucht!",
                             description=f"{message.author.mention} du hast deine Versuche für die Zahl verbraucht!",
                             color=COLOR,
                         )
