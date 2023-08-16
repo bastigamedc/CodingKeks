@@ -20,7 +20,7 @@ async def get_level(ctx):
 async def get_delete(ctx):
     return delete
 
-class NummerErraten(ezcord.Cog, group="Mini Games"):
+class NummerErraten(ezcord.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.DB = "main.db"
